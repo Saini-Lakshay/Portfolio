@@ -18,9 +18,9 @@ function App() {
     "React-Native",
   ];
   return (
-    <div className="h-screen w-screen bg-darkGrey flex justify-center items-center">
-      <div className="h-screen w-screen bg-darkGrey flex justify-center items-center p-4 max-w-screen-2xl">
-        <div className="h-screen w-1/5 bg-darkGrey2 mx-auto p-4 min-w-fit overflow-auto scrollbar-hidden">
+    <div className="h-screen w-screen bg-darkGrey flex justify-center items-center overflow-auto scrollbar-hidden">
+      <div className="h-screen w-screen bg-darkGrey justify-center items-center p-4 max-w-screen-2xl sm:flex-col lg:flex lg:flex-row">
+        <div className="h-fit w-1/5 bg-darkGrey2 mx-auto p-4 min-w-fit overflow-visible scrollbar-hidden sm:w-4/5 h-screen md:h-screen sm:overflow-auto lg:w-1/5">
           <div className="bg-lightGrey py-4 px-16">
             <img
               class="w-24 h-24 rounded-full mx-auto"
@@ -89,7 +89,7 @@ function App() {
             </a>
           </div>
         </div>
-        <div className="h-screen w-3/4 bg-darkGrey2 mx-auto relative">
+        <div className="h-screen w-full bg-darkGrey2 mx-auto relative md:w-3/4">
           <MainscreenCenter />
         </div>
         {/* <div className="h-screen w-16 bg-darkGrey2 mx-auto"></div> */}

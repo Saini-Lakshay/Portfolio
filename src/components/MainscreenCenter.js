@@ -5,24 +5,24 @@ import Typical from "react-typical";
 
 const MainscreenCenter = () => {
   return (
-    <div className="width-full flex overflow-auto h-full flex-col scrollbar-hidden pb-16">
+    <div className="width-full flex lg:overflow-auto md:overflow-visible h-full flex-col scrollbar-hidden pb-16 smooth-scroll ">
       <img src={Background} alt="" className="absolute h-2/4 w-full z-0" />
       <div className="z-10 bg-darkGlass h-2/4 w-full flex justify-center">
-        <div className="bg-glass w-4/5 mt-10 flex items-center justify-center flex-col rounded-xl py-16">
-          <span className="text-white text-4xl font-bold fjalla w-full pl-10 cursor-pointer">
+        <div className="bg-glass w-4/5 mt-10 flex items-center justify-center flex-col rounded-xl py-16 min-w-fit">
+          <span className="text-white text-sm font-bold fjalla w-full pl-10 cursor-pointer sm:text-sm md:text-4xl">
             Hello,
           </span>
-          <span className="text-white text-4xl font-bold fjalla pl-16 w-full cursor-pointer">
+          <span className="text-white text-sm font-bold fjalla pl-16 w-full cursor-pointer sm:text-sm md:text-4xl">
             Discover my Space!
           </span>
-          <div className="w-full my-16 flex flex-row space-x-3">
-            <span className="text-white text-l font-bold fjalla px-4">
+          <div className="w-full my-16 flex flex-row">
+            <span className="text-white text-xs font-bold fjalla px-4 sm:text-sm md:text-xl lg-text-4xl truncate">
               {"< "}
               <span className="text-yellow">code</span>
               {" >"}
             </span>
             <Typical
-              className="text-white font-mono font-bold"
+              className="text-white text-xs font-mono font-bold sm:text-sm md:text-xl lg-text-4xl"
               steps={[
                 "I build web interfaces.",
                 2000,
@@ -32,7 +32,7 @@ const MainscreenCenter = () => {
               loop={Infinity}
               wrapper="p"
             />
-            <span className="text-white text-l font-bold fjalla px-4">
+            <span className="text-white text-xs font-bold fjalla px-4 sm:text-sm md:text-xl lg-text-4xl truncate">
               {"< "}
               <span className="text-yellow">code</span>
               {" >"}
@@ -42,7 +42,23 @@ const MainscreenCenter = () => {
       </div>
       <div className="py-8 px-8 text-white z-10 bg-darkGlass pt-16">
         <span className="text-yellow cursor-pointer text-xl">Projects</span>
-        <div className="grid grid-cols-3 gap-4 my-8">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 my-8">
+          <div className="bg-lightGrey px-4 py-4 rounded-xl h-fit cursor-pointer">
+            <img src={Blockchain} alt="" className="h-3/4 w-full" />
+            <h4 className="cursor-pointer mt-4">Blockchain Token Transfer</h4>
+            <p className="text-textGrey">
+              A web application to transfer tokens/coins on blockchain network
+              and saving the transaction record along with a proper gif!
+            </p>
+          </div>
+          <div className="bg-lightGrey px-4 py-4 rounded-xl h-fit cursor-pointer">
+            <img src={Blockchain} alt="" className="h-3/4 w-full" />
+            <h4 className="cursor-pointer mt-4">Blockchain Token Transfer</h4>
+            <p className="text-textGrey">
+              A web application to transfer tokens/coins on blockchain network
+              and saving the transaction record along with a proper gif!
+            </p>
+          </div>
           <div className="bg-lightGrey px-4 py-4 rounded-xl h-fit cursor-pointer">
             <img src={Blockchain} alt="" className="h-3/4 w-full" />
             <h4 className="cursor-pointer mt-4">Blockchain Token Transfer</h4>
