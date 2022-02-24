@@ -6,6 +6,7 @@ import {
   FaGithub,
   FaTwitter,
 } from "react-icons/fa";
+import MainscreenCenter from "./components/MainscreenCenter";
 
 function App() {
   const skills = [
@@ -28,7 +29,7 @@ function App() {
               width="384"
               height="512"
             ></img>
-            <h2 className="mx-auto text-white font-bold mt-4 mx-auto text-center cursor-pointer">
+            <h2 className="mx-auto text-white font-bold mt-4 mx-auto text-center cursor-pointer hover:text-yellow">
               Lakshay Saini
             </h2>
             <p className="mx-auto text-textGrey text-center mb-8 mt-4 cursor-pointer">
@@ -68,13 +69,29 @@ function App() {
             })}
           </ul>
           <div className="flex flrx-row justify-between text-yellow mt-10">
-            <FaInstagram className="cursor-pointer" />
-            <FaLinkedinIn className="cursor-pointer" />
-            <FaTwitter className="cursor-pointer" />
-            <FaGithub className="cursor-pointer" />
+            <a
+              target="_blank"
+              href="https://www.instagram.com/lakshay_saini_2501/"
+            >
+              <FaInstagram className="cursor-pointer hover:scale-150" />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/lakshay-saini-59542414b"
+            >
+              <FaLinkedinIn className="cursor-pointer hover:scale-150" />
+            </a>
+            <a target="_blank" href="https://twitter.com/Lakshay_2501">
+              <FaTwitter className="cursor-pointer hover:scale-150" />
+            </a>
+            <a target="_blank" href="https://github.com/Saini-Lakshay">
+              <FaGithub className="cursor-pointer hover:scale-150" />
+            </a>
           </div>
         </div>
-        <div className="h-screen w-3/4 bg-darkGrey2 mx-auto"></div>
+        <div className="h-screen w-3/4 bg-darkGrey2 mx-auto relative">
+          <MainscreenCenter />
+        </div>
         {/* <div className="h-screen w-16 bg-darkGrey2 mx-auto"></div> */}
       </div>
     </div>
