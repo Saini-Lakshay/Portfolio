@@ -51,22 +51,6 @@ const MainscreenCenter = () => {
               and saving the transaction record along with a proper gif!
             </p>
           </div>
-          <div className="bg-lightGrey px-4 py-4 rounded-xl h-fit cursor-pointer">
-            <img src={Blockchain} alt="" className="h-3/4 w-full" />
-            <h4 className="cursor-pointer mt-4">Blockchain Token Transfer</h4>
-            <p className="text-textGrey">
-              A web application to transfer tokens/coins on blockchain network
-              and saving the transaction record along with a proper gif!
-            </p>
-          </div>
-          <div className="bg-lightGrey px-4 py-4 rounded-xl h-fit cursor-pointer">
-            <img src={Blockchain} alt="" className="h-3/4 w-full" />
-            <h4 className="cursor-pointer mt-4">Blockchain Token Transfer</h4>
-            <p className="text-textGrey">
-              A web application to transfer tokens/coins on blockchain network
-              and saving the transaction record along with a proper gif!
-            </p>
-          </div>
         </div>
       </div>
     </div>
