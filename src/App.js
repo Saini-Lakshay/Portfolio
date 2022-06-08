@@ -5,10 +5,40 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaTwitter,
+  FaHamburger,
 } from "react-icons/fa";
 import MainscreenCenter from "./components/MainscreenCenter";
+import { useEffect, useState } from "react";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { Watch } from "react-loader-spinner";
 
 function App() {
+  const [sidebarHidden, setSideBarHidden] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const onResize = (event) => {
+    if (window.innerWidth <= 1030) {
+      setSideBarHidden(true);
+    } else {
+      setSideBarHidden(false);
+    }
+  };
+
+  const toggleSideBar = () => {
+    setSideBarHidden(!sidebarHidden);
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 1030) {
+      setSideBarHidden(true);
+    }
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const skills = [
     "HTML",
     "CSS",
@@ -19,8 +49,47 @@ function App() {
   ];
   return (
     <div className="h-screen w-screen bg-darkGrey flex justify-center items-center overflow-auto scrollbar-hidden">
+      {isLoading && (
+        <div
+          className="bg-darkGrey"
+          style={{
+            position: "absolute",
+            width: "100vw",
+            height: "100vh",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Watch color="#00BFFF" height={80} width={80} />
+        </div>
+      )}
+      <div
+        className="flex items-center justify-center absolute h-10 w-10 block lg:hidden cursor-pointer"
+        style={{
+          top: 30,
+          left: 30,
+          zIndex: 100,
+        }}
+        onClick={() => toggleSideBar()}
+      >
+        <FaHamburger size={35} className="text-yellow" />
+      </div>
+      )
       <div className="h-screen w-screen bg-darkGrey justify-center items-center p-4 max-w-screen-2xl sm:flex-col lg:flex lg:flex-row">
-        <div className="h-fit w-1/5 bg-darkGrey2 mx-auto p-4 min-w-fit overflow-visible scrollbar-hidden sm:w-4/5 h-screen md:h-screen sm:overflow-auto lg:w-1/5">
+        <div
+          className="absolute left-0 top-0 w-screen h-screen z-50 bg-darkGrey2 mx-auto p-4 min-w-fit overflow-visible scrollbar-hidden sm:overflow-auto lg:w-1/5 lg:relative"
+          style={
+            sidebarHidden
+              ? {
+                  display: "none",
+                }
+              : {
+                  display: "grid",
+                }
+          }
+        >
           <div className="bg-lightGrey py-4 px-16">
             <img
               class="w-24 h-24 rounded-full mx-auto"
@@ -89,11 +158,12 @@ function App() {
             </a>
           </div>
         </div>
-        <div className="h-screen w-full bg-darkGrey2 mx-auto relative md:w-3/4">
+        <div className="h-screen w-full bg-darkGrey2 mx-auto relative ">
           <MainscreenCenter />
         </div>
         {/* <div className="h-screen w-16 bg-darkGrey2 mx-auto"></div> */}
       </div>
+      )
     </div>
   );
 }
