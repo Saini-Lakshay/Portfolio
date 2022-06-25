@@ -1,6 +1,7 @@
 import React from "react";
 import Background from "../assets/background.jpeg";
 import Blockchain from "../assets/blockchain1.png";
+import Quest from "../assets/quest.jpeg";
 import Typical from "react-typical";
 import { PROJECTS } from "../Constants";
 
@@ -26,13 +27,17 @@ const MainscreenCenter = () => {
               <span className="text-yellow">code</span>
               {" >"}
             </span>
+            <span className="text-white text-xs font-mono font-bold sm:text-sm md:text-xl lg-text-4xl contents md:hidden">
+              {" "}
+              I make stuff!{" "}
+            </span>
             <Typical
-              className="text-white text-xs font-mono font-bold sm:text-sm md:text-xl lg-text-4xl"
+              className="text-white text-xs font-mono font-bold sm:text-sm md:text-xl lg-text-4xl hidden md:contents"
               steps={[
                 "I build web interfaces.",
-                2000,
+                5000,
                 "I build mobile interfaces.",
-                2000,
+                5000,
               ]}
               loop={Infinity}
               wrapper="p"
@@ -45,18 +50,48 @@ const MainscreenCenter = () => {
           </div>
         </div>
       </div>
-      <div className="py-8 px-8 text-white z-10 bg-darkGlass pt-16">
+      <div className="py-0 px-0 md:py-8 md:px-8 text-white z-10 bg-darkGlass pt-16">
         <span className="text-yellow cursor-pointer text-xl">Projects</span>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 my-8">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 my-8">
           <div
-            className="bg-lightGrey px-4 py-4 rounded-xl h-fit cursor-pointer"
+            className="bg-lightGrey px-4 py-4 rounded-xl h-fit cursor-pointer transform transition duration-500 hover:scale-110"
             onClick={() => openInNewTab(PROJECTS.kryptoX)}
           >
-            <img src={Blockchain} alt="" className="h-3/4 w-full" />
+            <img
+              src={Blockchain}
+              alt=""
+              className="h-3/4 w-full"
+              style={{
+                height: "180px",
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
             <h4 className="cursor-pointer mt-4">Blockchain Token Transfer</h4>
             <p className="text-textGrey">
               A web application to transfer tokens/coins on blockchain network
               and saving the transaction record along with a proper gif!
+            </p>
+          </div>
+
+          <div
+            className="bg-lightGrey px-4 py-4 rounded-xl h-fit cursor-pointer transform transition duration-500 hover:scale-110"
+            onClick={() => openInNewTab(PROJECTS.quest)}
+          >
+            <img
+              src={Quest}
+              alt=""
+              className="h-3/4 w-full"
+              style={{
+                maxHeight: "180px",
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
+            <h4 className="cursor-pointer mt-4">Quest Mobile App</h4>
+            <p className="text-textGrey">
+              A mobile application which helps to memorize questions and answers
+              by asking them on a preset timings by user!
             </p>
           </div>
         </div>

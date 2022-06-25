@@ -12,6 +12,32 @@
   -webkit-font-smoothing: antialiased;
 }
 
+#sidebar {
+  animation: sidebarmove 1s 1;
+}
+
+@keyframes sidebarmove {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+#mainDiv {
+  animation: mainDivMove 3s 1;
+}
+
+@keyframes mainDivMove {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 0;
+  }
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
