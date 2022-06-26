@@ -92,7 +92,7 @@ function App() {
           >
             <div className="bg-lightGrey py-4 px-16 scrollbar-hidden">
               <img
-                class="w-24 h-24 rounded-full mx-auto"
+                className="w-24 h-24 rounded-full mx-auto"
                 src={Profile}
                 alt=""
                 width="384"
@@ -163,7 +163,7 @@ function App() {
           className="h-screen w-full bg-darkGrey2 mx-auto relative"
           id="mainDiv"
         >
-          <MainscreenCenter />
+          <MainscreenCenter setIsLoading={setIsLoading} />
         </div>
         {/* <div className="h-screen w-16 bg-darkGrey2 mx-auto"></div> */}
       </div>
